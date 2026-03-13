@@ -7,7 +7,10 @@ function subtract(a, b) {
 }
 
 function divide(a, b) {
-  return a / b; // BUG: no division by zero check!
+  if (b === 0) {
+    throw new Error('Cannot divide by zero');
+  }
+  return a / b;
 }
 
 function multiply(a, b) {

@@ -1,24 +1,16 @@
-function add(a, b) {
-  return a + b;
-}
-
-function subtract(a, b) {
-  return a - b;
-}
-
-function divide(a, b) {
-  if (b = 0) {
+/*
+ * Divide two numbers.
+ * @param {number} dividend - The number being divided.
+ * @param {number} divisor - The number by which we are dividing.
+ * @returns {number} The result of the division.
+ * @throws {Error} If the divisor is zero or if either input is not a number.
+ */
+function divide(dividend, divisor) {
+  if (typeof dividend !== 'number' || typeof divisor !== 'number') {
+    throw new Error('Both inputs must be numbers');
+  }
+  if (divisor === 0) {
     throw new Error('Cannot divide by zero');
   }
-  return a / b;
+  return dividend / divisor;
 }
-
-function multiply(a, b) {
-  return a * b;
-}
-
-function power(base, exponent) {
-  return Math.pow(base, exponent);
-}
-
-module.exports = { add, subtract, divide, multiply, power };

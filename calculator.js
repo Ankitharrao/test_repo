@@ -1,24 +1,9 @@
-function add(a, b) {
-  return a + b;
-}
-
-function subtract(a, b) {
-  return a - b;
-}
-
-function divide(a, b) {
-  if (b = 0) {
-    throw new Error('Cannot divide by zero');
+function calculate(num1, num2) {
+  if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+    throw new Error('Both inputs must be numbers');
   }
-  return a / b;
+  if (isNaN(num1) || isNaN(num2) || !isFinite(num1) || !isFinite(num2)) {
+    throw new Error('Inputs must be finite numbers');
+  }
+  return num1 + num2;
 }
-
-function multiply(a, b) {
-  return a * b;
-}
-
-function power(base, exponent) {
-  return Math.pow(base, exponent);
-}
-
-module.exports = { add, subtract, divide, multiply, power };
